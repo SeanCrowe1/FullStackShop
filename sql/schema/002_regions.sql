@@ -1,0 +1,9 @@
+-- +goose Up
+CREATE TABLE regions (
+    id UUID PRIMARY KEY,
+    region_name TEXT NOT NULL,
+    shipping_rate NUMERIC NOT NULL
+);
+
+-- +goose Down
+DROP TABLE regions;
