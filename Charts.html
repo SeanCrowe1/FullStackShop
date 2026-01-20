@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT Merchandise</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Linking Google fonts for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="css/homeIcons/whiteUser.png" alt="UserLogo">
+            </a>
+
+            <button class="toggler sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+
+            <button class="toggler menu-toggler">
+                <span class="material-symbols-rounded">menu</span>
+            </button>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+
+            <!-- Primary top nav -->
+            <ul class="nav-list primary-nav">
+
+                <li class="nav-item">
+                    <a href="Home.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">home</span>
+                        <span class="nav-label">Home</span>
+                    </a>
+                    <span class="nav-tooltip">Home</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="About.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">info</span>
+                        <span class="nav-label">About</span>
+                    </a>
+                    <span class="nav-tooltip">About</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Products.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">shopping_bag</span>
+                        <span class="nav-label">Shop</span>
+                    </a>
+                    <span class="nav-tooltip">Shop</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Contact.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">contact_page</span>
+                        <span class="nav-label">Contact</span>
+                    </a>
+                    <span class="nav-tooltip">Contact</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Cart.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">shopping_cart</span>
+                        <span class="nav-label">Cart</span>
+                    </a>
+                    <span class="nav-tooltip">Cart</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Charts.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">chart_data</span>
+                        <span class="nav-label">Top Charts</span>
+                    </a>
+                    <span class="nav-tooltip">Top Charts</span>
+                </li>
+
+            </ul>
+
+            <!-- Secondary bottom nav -->
+            <ul class="nav-list secondary-nav">
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">account_circle</span>
+                        <span class="nav-label">Profile</span>
+                    </a>
+                    <span class="nav-tooltip">Profile</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">logout</span>
+                        <span class="nav-label">Logout</span>
+                    </a>
+                    <span class="nav-tooltip">Logout</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <center>
+            <h1>Vibrant Vinyls</h1>
+            <br>
+            <div id="charts">
+            <p>
+                <span class="textColor">
+                    Explore the evolution of music across the decades by searching through the top 10 best-selling vinyl
+                     records from the 1950s to today. Whether you're discovering timeless classics or revisiting iconic albums,
+                      our archive lets you dive into the sounds that shaped each era. Simply enter a decade or album title below to uncover its biggest vinyl hits.
+                </span>
+            </p>
+            <br>
+                <h2>
+                <label for="decadeSelect">Choose a decade:</label><br>
+                </h2>
+                <select id="decadeSelect">
+                <option value="">-- Select a decade --</option>
+                <option value="1950s">1950s</option>
+                <option value="1960s">1960s</option>
+                <option value="1970s">1970s</option>
+                <option value="1980s">1980s</option>
+                <option value="1990s">1990s</option>
+                <option value="2000s">2000s</option>
+                <option value="2010s">2010s</option>
+                <option value="2020s">2020s</option>
+                </select>
+                <br><br>
+                <p>
+                <pre id="results" class="results"></pre>
+                </p>
+
+        </center>
+    </main>
+
+</div>
+<script src="Java/script.js"></script>
+
+</body>
+</html>

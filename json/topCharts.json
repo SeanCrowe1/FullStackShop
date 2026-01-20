@@ -1,0 +1,94 @@
+{
+  "vinyl_sales_by_decade": [
+    {
+      "decade": "1950s",
+      "top_10": [
+        {"artist": "Harry Belafonte", "title": "Calypso", "sales_estimated": null},
+        {"artist": "Original Broadway Cast", "title": "My Fair Lady", "sales_estimated": null},
+        {"artist": "Henry Mancini", "title": "Music from Peter Gunn", "sales_estimated": null},
+        {"artist": "Elvis Presley", "title": "Elvis' Golden Records", "sales_estimated": null},
+        {"artist": "Buddy Holly & The Crickets", "title": "The ’Chirping’ Crickets", "sales_estimated": null},
+        {"artist": "Little Richard", "title": "Here's Little Richard", "sales_estimated": null},
+        {"artist": "Chuck Berry", "title": "Chuck Berry Is on Top", "sales_estimated": null},
+        {"artist": "Bill Haley & His Comets", "title": "Rock Around the Clock", "sales_estimated": null},
+        {"artist": "Patti Page", "title": "The Tennessee Waltz", "sales_estimated": null},
+        {"artist": "Ray Charles", "title": "The Genius of Ray Charles", "sales_estimated": null}
+      ]
+    },
+    {
+      "decade": "1960s",
+      "top_10": [
+        {"artist": "The Beatles", "title": "Abbey Road", "global_sales": 30000000},
+        {"artist": "The Beatles", "title": "Sgt. Pepper’s Lonely Hearts Club Band", "global_sales": 28000000},
+        {"artist": "Iron Butterfly", "title": "In‑A‑Gadda‑Da‑Vida", "global_sales": 30000000},
+        {"artist": "The Who", "title": "Tommy", "global_sales": 20000000},
+        {"artist": "The Doors", "title": "The Doors", "global_sales": 20000000},
+        {"artist": "Led Zeppelin", "title": "Led Zeppelin II", "global_sales": 33000000},
+        {"artist": "The Beatles", "title": "Help!", "global_sales": 33000000},
+        {"artist": "Simon & Garfunkel", "title": "Bookends", "global_sales": 26000000},
+        {"artist": "The Beatles", "title": "A Hard Day’s Night", "global_sales": 25000000},
+        {"artist": "Led Zeppelin", "title": "Led Zeppelin I", "global_sales": 23000000}
+      ]
+    },
+    {
+      "decade": "1970s",
+      "top_10": [
+        {"artist": "Pink Floyd", "title": "The Dark Side of the Moon", "global_sales": 23700000},
+        {"artist": "Meat Loaf", "title": "Bat Out of Hell", "global_sales": 25300000},
+        {"artist": "AC/DC", "title": "Back in Black", "global_sales": 24500000},
+        {"artist": "The Eagles", "title": "Their Greatest Hits (1971–1975)", "global_sales": 21600000},
+        {"artist": "Fleetwood Mac", "title": "Rumours", "global_sales": 20200000},
+        {"artist": "Bee Gees", "title": "Saturday Night Fever OST", "global_sales": 19000000},
+        {"artist": "Led Zeppelin", "title": "IV", "global_sales": 19500000},
+        {"artist": "Queen", "title": "News of the World", "global_sales": null},
+        {"artist": "David Bowie", "title": "Ziggy Stardust", "global_sales": null},
+        {"artist": "Bruce Springsteen", "title": "Born to Run", "global_sales": null}
+      ]
+    },
+    {
+      "decade": "1980s",
+      "top_10": [
+        {"artist": "Michael Jackson", "title": "Thriller", "global_sales": 27000000},
+        {"artist": "AC/DC", "title": "Back in Black", "global_sales": 24500000},
+        {"artist": "Prince & The Revolution", "title": "Purple Rain", "global_sales": null},
+        {"artist": "U2", "title": "The Joshua Tree", "global_sales": null},
+        {"artist": "Madonna", "title": "Like a Virgin", "global_sales": null},
+        {"artist": "Guns N’ Roses", "title": "Appetite for Destruction", "global_sales": null},
+        {"artist": "Whitney Houston", "title": "Whitney", "global_sales": null},
+        {"artist": "Cyndi Lauper", "title": "She’s So Unusual", "global_sales": null},
+        {"artist": "Bruce Springsteen", "title": "Born in the U.S.A.", "global_sales": null},
+        {"artist": "Metallica", "title": "...And Justice for All", "global_sales": null}
+      ]
+    },
+    {
+      "decade": "2010s",
+      "top_10": [
+        {"artist": "The Beatles", "title": "Abbey Road", "vinyl_sales_us": 558000},
+        {"artist": "Pink Floyd", "title": "The Dark Side of the Moon", "vinyl_sales_us": 376000},
+        {"artist": "Various Artists", "title": "Guardians of the Galaxy OST", "vinyl_sales_us": 367000},
+        {"artist": "Bob Marley & The Wailers", "title": "Legend", "vinyl_sales_us": 364000},
+        {"artist": "Amy Winehouse", "title": "Back to Black", "vinyl_sales_us": 351000},
+        {"artist": "Michael Jackson", "title": "Thriller", "vinyl_sales_us": 334000},
+        {"artist": "The Beatles", "title": "Sgt. Pepper’s Lonely Hearts Club Band", "vinyl_sales_us": 313000},
+        {"artist": "Fleetwood Mac", "title": "Rumours", "vinyl_sales_us": 304000},
+        {"artist": "Miles Davis", "title": "Kind of Blue", "vinyl_sales_us": 286000},
+        {"artist": "Lana Del Rey", "title": "Born to Die", "vinyl_sales_us": 283000}
+      ]
+    },
+    {
+      "decade": "2020s",
+      "top_10": [
+        {"artist": "Taylor Swift", "title": "1989 (Taylor’s Version)", "vinyl_sales_us": 1014000},
+        {"artist": "Taylor Swift", "title": "Midnights", "vinyl_sales_us": 945000},
+        {"artist": "Adele", "title": "30", "vinyl_sales_us": 318000},
+        {"artist": "Harry Styles", "title": "Fine Line", "vinyl_sales_us": 232000},
+        {"artist": "The Beatles", "title": "Abbey Road", "vinyl_sales_us": 246000},
+        {"artist": "Billie Eilish", "title": "When We All Fall Asleep, Where Do We Go?", "vinyl_sales_us": 176000},
+        {"artist": "Queen", "title": "Greatest Hits I", "vinyl_sales_us": 139000},
+        {"artist": "Soundtrack", "title": "Guardians of the Galaxy OST", "vinyl_sales_us": 123000},
+        {"artist": "Beach Boys", "title": "Sounds Of Summer", "vinyl_sales_us": 107000},
+        {"artist": "Pink Floyd", "title": "Dark Side Of The Moon", "vinyl_sales_us": 92000}
+      ]
+    }
+  ]
+}

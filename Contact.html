@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT Merchandise</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Linking Google fonts for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<!-- Vinyl Details Modal -->
+<div id="vinylModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="pointer" style="float:right; font-size:20px;">&times;</span>
+
+        <img id="modalImg" src="" class="round" style="width:200px; height:200px; margin-bottom:15px;">
+        <h2 id="modalTitle"></h2>
+        <h3 id="modalArtist"></h3>
+        <p id="modalPrice"></p>
+        <br>
+        <button class = "pointer" onclick="addToCart()">Add to Cart</button>
+    </div>
+</div>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="css/homeIcons/whiteUser.png" alt="UserLogo">
+            </a>
+
+            <button class="toggler sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+
+            <button class="toggler menu-toggler">
+                <span class="material-symbols-rounded">menu</span>
+            </button>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+
+            <!-- Primary top nav -->
+            <ul class="nav-list primary-nav">
+
+                <li class="nav-item">
+                    <a href="Home.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">home</span>
+                        <span class="nav-label">Home</span>
+                    </a>
+                    <span class="nav-tooltip">Home</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="About.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">info</span>
+                        <span class="nav-label">About</span>
+                    </a>
+                    <span class="nav-tooltip">About</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Products.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">shopping_bag</span>
+                        <span class="nav-label">Shop</span>
+                    </a>
+                    <span class="nav-tooltip">Shop</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Contact.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">contact_page</span>
+                        <span class="nav-label">Contact</span>
+                    </a>
+                    <span class="nav-tooltip">Contact</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Cart.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">shopping_cart</span>
+                        <span class="nav-label">Cart</span>
+                    </a>
+                    <span class="nav-tooltip">Cart</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="Charts.html" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">chart_data</span>
+                        <span class="nav-label">Top Charts</span>
+                    </a>
+                    <span class="nav-tooltip">Top Charts</span>
+                </li>
+
+            </ul>
+
+            <!-- Secondary bottom nav -->
+            <ul class="nav-list secondary-nav">
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">account_circle</span>
+                        <span class="nav-label">Profile</span>
+                    </a>
+                    <span class="nav-tooltip">Profile</span>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon material-symbols-rounded">logout</span>
+                        <span class="nav-label">Logout</span>
+                    </a>
+                    <span class="nav-tooltip">Logout</span>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <center>
+            <h1>Vibrant Vinyls</h1>
+            <br>
+            <div id="contacttext">
+                <p>
+                <span class="textColor">
+                    We’d love to hear from you! Whether you’re interested in a business opportunity, have questions about donations,
+                    are exploring potential employment, or wish to share feedback about your experience with us, we’re here to listen.
+                    <br><br>
+                    Please reach out using the contact form below — we’re always happy to help.
+                </p>
+                </span>
+                <br>
+            <div id="contactForm">
+                <form id="myForm">
+                <br>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br>
+
+                <label for="number">Phone number:</label><br>
+                <input type="text" id="number" name="number"><br>
+
+                <label for="comment">Comment:</label><br>
+                <input type="text" id="comment" name="comment" style="height: 5rem; width: 75%;"><br><br>
+
+                <input type="submit" value="Submit" class="submitButton"><br><br>
+            </form>
+
+            <div id="customAlert" class="modal">
+                <div class="modal-content">
+                    <p id="alertMessage"></p><br>
+                    <button class = "pointer" onclick="closeAlert()">OK</button>
+                </div>
+            </div>
+        </center>
+    </main>
+
+</div>
+<script src="Java/script.js"></script>
+
+</body>
+</html>
