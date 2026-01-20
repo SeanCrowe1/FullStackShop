@@ -8,26 +8,24 @@ package database
 import (
 	"context"
 	"database/sql"
-
-	"github.com/google/uuid"
 )
 
 const createCustomer = `-- name: CreateCustomer :one
 INSERT INTO customers (id, first_name, last_name, email, address_1, address_2, postal_code)
 VALUES (
-    $1,
-    $2,
-    $3,
-    $4,
-    $5,
-    $6,
-    $7
+    ?,
+    ?,
+    ?,
+    ?,
+    ?,
+    ?,
+    ?
 )
 RETURNING id, first_name, last_name, email, address_1, address_2, postal_code
 `
 
 type CreateCustomerParams struct {
-	ID         uuid.UUID
+	ID         interface{}
 	FirstName  string
 	LastName   string
 	Email      string
@@ -61,7 +59,7 @@ func (q *Queries) CreateCustomer(ctx context.Context, arg CreateCustomerParams) 
 
 const getCustomerByFirstName = `-- name: GetCustomerByFirstName :one
 SELECT id, first_name, last_name, email, address_1, address_2, postal_code FROM customers
-WHERE first_name = $1
+WHERE first_name = ?
 `
 
 func (q *Queries) GetCustomerByFirstName(ctx context.Context, firstName string) (Customer, error) {

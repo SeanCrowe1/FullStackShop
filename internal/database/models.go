@@ -7,12 +7,10 @@ package database
 import (
 	"database/sql"
 	"time"
-
-	"github.com/google/uuid"
 )
 
 type Customer struct {
-	ID         uuid.UUID
+	ID         interface{}
 	FirstName  string
 	LastName   string
 	Email      string
@@ -22,28 +20,28 @@ type Customer struct {
 }
 
 type Order struct {
-	ID         uuid.UUID
-	CustomerID uuid.UUID
-	RegionID   uuid.UUID
+	ID         interface{}
+	CustomerID interface{}
+	RegionID   interface{}
 	OrderDate  time.Time
 	Status     string
 }
 
 type OrderItem struct {
-	ID        uuid.UUID
-	OrderID   uuid.UUID
-	ProductID uuid.UUID
-	Quantity  int32
+	ID        interface{}
+	OrderID   interface{}
+	ProductID interface{}
+	Quantity  int64
 }
 
 type Product struct {
-	ID          uuid.UUID
+	ID          interface{}
 	ProductName string
-	Price       string
+	Price       float64
 }
 
 type Region struct {
-	ID           uuid.UUID
+	ID           interface{}
 	RegionName   string
-	ShippingRate string
+	ShippingRate float64
 }
