@@ -11,6 +11,8 @@ import (
 	_ "github.com/lib/pq"
 
 	"FullStackShopProj/internal/database"
+
+	"github.com/joho/godotenv"
 )
 
 type apiConfig struct {
@@ -20,6 +22,8 @@ type apiConfig struct {
 
 func main() {
 	const filepathRoot = "."
+
+	godotenv.Load(".env")
 	port := os.Getenv("PORT")
 	dbUrl := os.Getenv("DB_URL")
 
