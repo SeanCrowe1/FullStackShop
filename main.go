@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"sync/atomic"
+	"time"
 
 	_ "github.com/lib/pq"
 
@@ -23,7 +24,10 @@ type apiConfig struct {
 func main() {
 	const filepathRoot = "."
 
-	godotenv.Load(".env")
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatalf("Couldn't find '.env' file: %v", err)
+	}
 	port := os.Getenv("PORT")
 	dbUrl := os.Getenv("DB_URL")
 
@@ -48,8 +52,9 @@ func main() {
 	mux.HandleFunc("GET /api/user", apiCfg.handlerCreateUser)
 
 	srv := &http.Server{
-		Addr:    ":" + port,
-		Handler: mux,
+		Addr:              ":" + port,
+		ReadHeaderTimeout: time.Second * 10,
+		Handler:           mux,
 	}
 
 	log.Printf("Serving files from %s on port: %s\n", filepathRoot, port)
@@ -59,7 +64,7 @@ func main() {
 func (cfg *apiConfig) handlerSecondPage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "text/html")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf(`
+	_, err := w.Write([]byte(fmt.Sprintf(`
 	<html>
 	<head>
 		<meta charset="UTF-8">
@@ -73,4 +78,7 @@ func (cfg *apiConfig) handlerSecondPage(w http.ResponseWriter, r *http.Request) 
 
 	</html>
 		`, "Lol")))
+	if err != nil {
+		log.Fatalf("error writing secondary page to http address: %v", err)
+	}
 }

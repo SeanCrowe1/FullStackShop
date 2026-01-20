@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
 func (cfg *apiConfig) handlerMetrics(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "text/html")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf(`
+	_, err := w.Write([]byte(fmt.Sprintf(`
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -22,6 +23,9 @@ func (cfg *apiConfig) handlerMetrics(w http.ResponseWriter, r *http.Request) {
 
 </html>
 	`, cfg.fileserverHits.Load())))
+	if err != nil {
+		log.Fatalf("error writing admin page to http address: %v", err)
+	}
 }
 
 func (cfg *apiConfig) middlewareMetricsInc(next http.Handler) http.Handler {
