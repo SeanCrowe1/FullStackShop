@@ -10,7 +10,11 @@ func (cfg *apiConfig) handlerMetrics(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(fmt.Sprintf(`
 <html>
-
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FIT Shop Metrics</title>
+</head>
 <body>
 	<h1>Welcome, FIT Admin</h1>
 	<p>Our shop has been visited %d times!</p>
