@@ -8,6 +8,13 @@ function loadCheckoutForm(){
     })
 }
 
+function loadMyFooter(){
+    fetch("../components/footer.html")
+    .then(response => response.text())
+    .then(footerHTML => {
+        document.getElementById('myFooter').innerHTML = footerHTML;
+    })
+}
 
 // function getBooksInCart(){
 //     let myBooksInCart = JSON.parse(localStorage.getItem("booksInCart")) || [];

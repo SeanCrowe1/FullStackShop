@@ -19,7 +19,7 @@
 </head>
 
 <!-- Page-specific JS initialisation -->
-<body onload="navBar(); loadBooks(3); loadCheckoutForm(); totalNumOfBooksInCart(); loadMyFooter();"> 
+<body onload="loadCheckoutForm(); loadMyFooter(); navBar(); loadBooks(3); totalNumOfBooksInCart(); "> 
     <header>
         <!-- NavBar Injected Via JS --> 
         <div id="navBar" class="removeSearchBar"></div>
@@ -37,10 +37,10 @@
 
         <section> 
             <!-- renders 3 books from JSON -->
-            <div class="bookRecommendationsContainer" id="bookCardsRecommendations">
+            <!-- <div class="bookRecommendationsContainer" id="bookCardsRecommendations">
                 <h3 class="title">You might also like</h3>
                 <div id="bookName" class="bookCardsRecommendations"></div>
-            </div>
+            </div> -->
         </section>
 
         <section>
