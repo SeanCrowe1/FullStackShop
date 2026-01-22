@@ -1,8 +1,8 @@
 -- +goose Up
 CREATE TABLE order_items (
-    id UUID PRIMARY KEY,
-    order_id UUID NOT NULL REFERENCES orders (id) ON DELETE CASCADE,
-    product_id UUID NOT NULL REFERENCES products (id) ON DELETE CASCADE,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    order_id INTEGER NOT NULL REFERENCES orders (id) ON DELETE CASCADE,
+    product_id INTEGER NOT NULL REFERENCES products (id) ON DELETE CASCADE,
     quantity INTEGER NOT NULL
 );
 

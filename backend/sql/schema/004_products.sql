@@ -1,6 +1,6 @@
 -- +goose Up
 CREATE TABLE products (
-    id UUID PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_name TEXT NOT NULL,
     price NUMERIC NOT NULL
 );

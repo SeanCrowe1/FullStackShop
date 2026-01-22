@@ -1,6 +1,6 @@
 -- +goose Up
 CREATE TABLE regions (
-    id UUID PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     region_name TEXT NOT NULL,
     shipping_rate NUMERIC NOT NULL
 );

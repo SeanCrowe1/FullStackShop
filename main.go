@@ -9,11 +9,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	_ "github.com/lib/pq"
-
 	"FullStackShopProj/internal/database"
 
 	"github.com/joho/godotenv"
+
+	_ "github.com/tursodatabase/libsql-client-go/libsql"
 )
 
 type apiConfig struct {
@@ -31,7 +31,7 @@ func main() {
 	port := os.Getenv("PORT")
 	dbUrl := os.Getenv("DB_URL")
 
-	dbConn, err := sql.Open("postgres", dbUrl)
+	dbConn, err := sql.Open("libsql", dbUrl)
 	if err != nil {
 		log.Fatalf("Error opening database: %s", err)
 	}
@@ -47,7 +47,7 @@ func main() {
 	mux.Handle("/app/", apiCfg.middlewareMetricsInc(http.StripPrefix("/app", http.FileServer(http.Dir(filepathRoot)))))
 	mux.HandleFunc("GET /api/healthz", handlerReadiness)
 	mux.HandleFunc("GET /admin/metrics", apiCfg.handlerMetrics)
-	mux.HandleFunc("GET /app/other", apiCfg.handlerSecondPage)
+	mux.HandleFunc("GET /app/other", apiCfg.handlerProductsPage)
 	mux.HandleFunc("POST /admin/reset", apiCfg.handlerReset)
 	mux.HandleFunc("GET /api/user", apiCfg.handlerCreateUser)
 
@@ -61,7 +61,7 @@ func main() {
 	log.Fatal(srv.ListenAndServe())
 }
 
-func (cfg *apiConfig) handlerSecondPage(w http.ResponseWriter, r *http.Request) {
+func (cfg *apiConfig) handlerProductsPage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "text/html")
 	w.WriteHeader(http.StatusOK)
 	_, err := w.Write([]byte(fmt.Sprintf(`
