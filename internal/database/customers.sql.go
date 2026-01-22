@@ -11,9 +11,8 @@ import (
 )
 
 const createCustomer = `-- name: CreateCustomer :one
-INSERT INTO customers (id, first_name, last_name, email, address_1, address_2, postal_code)
+INSERT INTO customers (first_name, last_name, email, address_1, address_2, postal_code)
 VALUES (
-    ?,
     ?,
     ?,
     ?,
@@ -25,7 +24,6 @@ RETURNING id, first_name, last_name, email, address_1, address_2, postal_code
 `
 
 type CreateCustomerParams struct {
-	ID         interface{}
 	FirstName  string
 	LastName   string
 	Email      string
@@ -36,7 +34,6 @@ type CreateCustomerParams struct {
 
 func (q *Queries) CreateCustomer(ctx context.Context, arg CreateCustomerParams) (Customer, error) {
 	row := q.db.QueryRowContext(ctx, createCustomer,
-		arg.ID,
 		arg.FirstName,
 		arg.LastName,
 		arg.Email,
@@ -64,6 +61,26 @@ WHERE first_name = ?
 
 func (q *Queries) GetCustomerByFirstName(ctx context.Context, firstName string) (Customer, error) {
 	row := q.db.QueryRowContext(ctx, getCustomerByFirstName, firstName)
+	var i Customer
+	err := row.Scan(
+		&i.ID,
+		&i.FirstName,
+		&i.LastName,
+		&i.Email,
+		&i.Address1,
+		&i.Address2,
+		&i.PostalCode,
+	)
+	return i, err
+}
+
+const getCustomerByID = `-- name: GetCustomerByID :one
+SELECT id, first_name, last_name, email, address_1, address_2, postal_code FROM customers
+WHERE id = ?
+`
+
+func (q *Queries) GetCustomerByID(ctx context.Context, id int64) (Customer, error) {
+	row := q.db.QueryRowContext(ctx, getCustomerByID, id)
 	var i Customer
 	err := row.Scan(
 		&i.ID,

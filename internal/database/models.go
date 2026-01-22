@@ -10,7 +10,7 @@ import (
 )
 
 type Customer struct {
-	ID         interface{}
+	ID         int64
 	FirstName  string
 	LastName   string
 	Email      string
@@ -20,28 +20,28 @@ type Customer struct {
 }
 
 type Order struct {
-	ID         interface{}
-	CustomerID interface{}
-	RegionID   interface{}
+	ID         int64
+	CustomerID int64
+	RegionID   int64
 	OrderDate  time.Time
 	Status     string
 }
 
 type OrderItem struct {
-	ID        interface{}
-	OrderID   interface{}
-	ProductID interface{}
+	ID        int64
+	OrderID   int64
+	ProductID int64
 	Quantity  int64
 }
 
 type Product struct {
-	ID          interface{}
+	ID          int64
 	ProductName string
 	Price       float64
 }
 
 type Region struct {
-	ID           interface{}
+	ID           int64
 	RegionName   string
 	ShippingRate float64
 }
