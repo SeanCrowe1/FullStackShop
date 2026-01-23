@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"database/sql"
 	"encoding/json"
 	"net/http"
@@ -18,12 +19,25 @@ type Customer struct {
 	PostalCode string `json:"postcode"`
 }
 
-func (cfg *apiConfig) handlerGetCustomer(w http.ResponseWriter, r *http.Request) {
-	/*
-		TO DO: Write logic for checking if customer details exist in database already
+func (cfg *apiConfig) handlerLoginCustomer(w http.ResponseWriter, r *http.Request) {
+	type parameters struct {
+		Email string `json:"email"`
+	}
+	decoder := json.NewDecoder(r.Body)
+	params := parameters{}
+	err := decoder.Decode(&params)
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, "Couldn't decode parameters", err)
+		return
+	}
 
-		(Separate functions for logging in as existing customer and creating new customer?)
-	*/
+	dbCust, err := cfg.db.GetCustomerByEmail(context.Background(), params.Email)
+	if err != nil {
+		respondWithError(w, http.StatusBadRequest, "Customer does not exist", err)
+		return
+	}
+
+	respondWithJSON(w, http.StatusContinue, databaseCustToCust(dbCust))
 }
 
 func (cfg *apiConfig) handlerCreateCustomer(w http.ResponseWriter, r *http.Request) {

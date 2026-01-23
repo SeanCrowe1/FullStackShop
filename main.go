@@ -49,7 +49,7 @@ func main() {
 	mux.HandleFunc("GET /admin/metrics", apiCfg.handlerMetrics)
 	mux.HandleFunc("GET /app/other", apiCfg.handlerProductsPage)
 	mux.HandleFunc("POST /admin/reset", apiCfg.handlerReset)
-	mux.HandleFunc("GET /api/searchforcust", apiCfg.handlerGetCustomer)
+	mux.HandleFunc("GET /api/searchforcust", apiCfg.handlerLoginCustomer)
 	mux.HandleFunc("POST /api/newcust", apiCfg.handlerCreateCustomer)
 
 	srv := &http.Server{

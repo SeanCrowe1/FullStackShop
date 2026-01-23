@@ -10,9 +10,9 @@ VALUES (
 )
 RETURNING *;
 
--- name: GetCustomerByFirstName :one
+-- name: GetCustomerByEmail :one
 SELECT * FROM customers
-WHERE first_name = ?;
+WHERE email = ?;
 
 -- name: GetCustomerByID :one
 SELECT * FROM customers
