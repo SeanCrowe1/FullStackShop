@@ -33,7 +33,7 @@ func main() {
 
 	dbConn, err := sql.Open("libsql", dbUrl)
 	if err != nil {
-		log.Fatalf("Error opening database: %s", err)
+		log.Fatalf("Error opening database: %v", err)
 	}
 
 	dbQueries := database.New(dbConn)
